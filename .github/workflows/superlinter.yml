@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: read
-  
+
 jobs:
   super-linter:
     runs-on: ubuntu-latest
