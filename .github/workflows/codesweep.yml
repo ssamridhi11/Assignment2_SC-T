@@ -1,4 +1,4 @@
-name: "HCL AppScan CodeSweep"
+name: HCL AppScan CodeSweep
 
 on:
   push:
@@ -21,3 +21,13 @@ jobs:
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          APPSCAN_CODESWEEP_SCAN_PATH: '.'
+         
+          APPSCAN_CODESWEEP_REPORT_FORMAT: 'json'
+
+      - name: Upload CodeSweep report
+        uses: actions/upload-artifact@v4
+        with:
+          name: codesweep-report
+          path: codesweep-report.json
