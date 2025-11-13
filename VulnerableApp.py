@@ -7,7 +7,6 @@ db_config = {
     'user': 'admin',
     'password': 'secret123'
 }
-password = "admin123"  # hardcoded password
 def get_user_input():
     user_input = input('Enter your name: ')
     return user_input
@@ -34,3 +33,4 @@ if __name__ == '__main__':
     data = get_data()
     save_to_db(data)
     send_email('admin@example.com', 'User Input', user_input)
+    
