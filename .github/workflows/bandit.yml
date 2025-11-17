@@ -17,16 +17,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install Bandit and dependencies
         run: |
           python -m pip install --upgrade pip
           pip install bandit
-          pip install pymysql   # <-- FIX
+          pip install pymysql
 
       - name: Run Bandit scan
         run: |
